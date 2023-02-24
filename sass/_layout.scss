@@ -1,0 +1,52 @@
+//body
+body {
+    background-color: $ligth-color;
+    font-family: $font-text;
+}
+
+//header
+#header{
+
+    .foto{
+        border: 8px myComplement($icterine) solid;
+        border-radius: 50%;
+        width: 20%;
+    }
+
+    .info{
+        margin-left: 104px;
+        //padding: auto;
+    }
+
+    h1{
+        font-size: 2.4em;
+        padding-bottom: 16px;
+    }
+
+    h3{
+        font-weight: normal;
+        padding-bottom: 8px;
+    }
+
+    a{
+        padding: 0 8px 0 8px;
+    }
+
+    @extend %section;
+
+}
+//projetos
+#projetos{
+    display: flex;
+    justify-content: center;
+
+    @include sm{
+        display: block;
+    }
+}
+
+//footer
+#footer{
+    background-color: $white;
+    @extend %section
+}

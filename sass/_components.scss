@@ -1,0 +1,57 @@
+.projeto{
+    height: 200px;
+    float: left;
+    margin: 16px;
+    text-align: center;
+    width: 200px;
+
+    @include border(myComplement($icterine),10px, 'small');
+
+    .info{
+        background-color: $white;
+        height: 100%;
+        width: 100%;
+    }
+
+    h2{
+        padding: 16px;
+    }
+
+    p{
+        padding: 0 8px 0 8px;
+    }
+
+    hr{
+        margin: 16px 0 16px 0;
+    }
+
+}
+
+.destaque{
+    @include border(myComplement($sky-blue),10px, 'normal');
+}
+
+a{
+    &:link{
+        color: $emerald;
+        text-decoration: inherit;
+    }
+}
+
+%section{
+    align-items: center;
+    background-color: $white;
+    display: flex;
+    color: $primary-color;
+    justify-content: center;
+    padding: 50px 0 50px 0;
+    text-align: center;
+
+    @include md{
+        display: block;
+        
+        .info{
+            margin-left: 0;
+        }
+    }
+}

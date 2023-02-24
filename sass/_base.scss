@@ -1,0 +1,68 @@
+//Modules
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+
+$primary-color: #04369e;
+$ligth-color: #cdd5e5;
+$sky-blue: #55d2ed;
+$icterine: #fefe82;
+$mint-cream: #dbe6e2;
+$emerald: #1cbd5e;
+$white: white;
+$font-text: 'Roboto', sans-serif;
+
+//Font 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+//Reset 
+*{
+    margin: 0;
+}
+
+//Clearfix
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+//mixins border
+$widths: ('big': 4px, 'normal': 2px, 'small': 1px);
+
+@mixin border($color, $radio, $type){
+    $width: map.get($widths,  $type);
+
+    background: linear-gradient($ligth-color, $color);
+    background: -webkit-linear-gradient($ligth-color, $color);
+    border-radius: $radio;
+    padding: $width;
+
+    .info{
+        border-radius: $radio;
+    }
+}
+
+//mixins screen
+$screen-table: 768px;
+$screen-mobile: 375px;
+
+@mixin md{
+    @media(max-width: #{$screen-table}){
+        @content;
+    }
+}
+
+@mixin sm{
+    @media(max-width: #{$screen-mobile}){
+        @content;
+    }
+}
+
+
+//Function
+@function myComplement($color){
+    $complement-color: color.complement($color);
+    $dark: darken($complement-color, 10%);
+    @return $dark;
+}
