@@ -1,11 +1,17 @@
 .projeto{
     height: 200px;
-    float: left;
     margin: 16px;
     text-align: center;
     width: 200px;
 
+    //add mixin border
     @include border(myComplement($icterine),10px, 'small');
+
+    //screen small
+    @include sm{
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .info{
         background-color: $white;
@@ -27,7 +33,9 @@
 
 }
 
+//highligth project 
 .destaque{
+    //add mixin border
     @include border(myComplement($sky-blue),10px, 'normal');
 }
 
@@ -38,6 +46,7 @@ a{
     }
 }
 
+//style for header and footer
 %section{
     align-items: center;
     background-color: $white;
@@ -47,6 +56,7 @@ a{
     padding: 50px 0 50px 0;
     text-align: center;
 
+    //screen middle
     @include md{
         display: block;
         

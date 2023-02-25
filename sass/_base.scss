@@ -3,6 +3,7 @@
 @use 'sass:list';
 @use 'sass:map';
 
+//Variables
 $primary-color: #04369e;
 $ligth-color: #cdd5e5;
 $sky-blue: #55d2ed;
@@ -47,12 +48,14 @@ $widths: ('big': 4px, 'normal': 2px, 'small': 1px);
 $screen-table: 768px;
 $screen-mobile: 375px;
 
+//screen middle
 @mixin md{
     @media(max-width: #{$screen-table}){
         @content;
     }
 }
 
+//screen small
 @mixin sm{
     @media(max-width: #{$screen-mobile}){
         @content;
@@ -60,7 +63,7 @@ $screen-mobile: 375px;
 }
 
 
-//Function
+//Color complement function
 @function myComplement($color){
     $complement-color: color.complement($color);
     $dark: darken($complement-color, 10%);

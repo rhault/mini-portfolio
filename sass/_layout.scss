@@ -10,17 +10,26 @@ body {
     .foto{
         border: 8px myComplement($icterine) solid;
         border-radius: 50%;
-        width: 20%;
+        width: 15%;
+
+        //screen small
+        @include sm{
+            width: 40%;
+        }
     }
 
     .info{
         margin-left: 104px;
-        //padding: auto;
     }
 
     h1{
         font-size: 2.4em;
         padding-bottom: 16px;
+
+        @include sm{
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
     }
 
     h3{
@@ -40,6 +49,7 @@ body {
     display: flex;
     justify-content: center;
 
+    //screen small
     @include sm{
         display: block;
     }
@@ -48,5 +58,11 @@ body {
 //footer
 #footer{
     background-color: $white;
-    @extend %section
+    
+    @extend %section;
+    
+    //screen small
+    @include sm{
+        font-size: 1em;
+    }
 }
